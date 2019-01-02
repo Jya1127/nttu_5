@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<!--版面-->
+<style>
+.header {background-color: #f1f1f1; padding: 20px; text-align: center;font-family:DFKai-sb;font-size:170%;}
+.nav {background-color: black; height: 50px;}
+.nav a {
+float: left; color: white; text-align: center;
+padding: 14px 16px; text-decoration: none;
+font-family:DFKai-sb;font-size:150%
+}
+
+* {box-sizing: border-box;}
+.column {float: left; width: 20%; padding: 15px;}
+.column2 {float: left; width: 80%; padding: 15px;}
+
+@media screen and (max-width:600px) {
+.column {width: 100%;}
+}
+/*---------------------------------------------------------------------*/
+.block{border: 1px; border-color: solid}
+table{border-collapse: collapse; width: 200px; height: 200px}
+table,td,th{border:1px solid black; text-align: center;}
+input{position:center;border: 0px; width: 80px; height: 80px; text-align: center}
+#提示1{position:absolute;left:220px;top:300px;}
+#提示2{position:absolute;left:220px;bottom:-10px;}
+#提示2_圖{position:absolute;left:35px;bottom:-80px;}
+
+</style>
+<!--------------------------------style--------------------------------->
+<head>
+	<meta charset="UTF-8">
+	<title> 拉丁方陣 </title>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-
+	FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script>
+	$(document).ready(function(){
+		$("input").focus(function(){
+			$(this).css("background-color","#cccccc");
+	});
+		$("input").blur(function(){
+			$(this).css("background-color","#ffffff");
+		});
+	});
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$("#show_btn1").click(function(){
+			$("#show1").toggle();
+		});
+	});
+	
+	</script>
+
+	<script>
+	$(document).ready(function(){
+		$("#show_btn2").click(function(){
+			$("#show2").toggle();
+		});
+	});
+	
+	</script>
+</head>
+<!--------------------------------按鍵--------------------------------->
+<body>
+<div class="header"><h1 >拉丁方陣</h1></div>
+
+<div class="nav">
+<a href="4_3.html">介紹</a><a href="4_4.html">練習</a>
+</div>
+<!--------------------------------col1--------------------------------->
+<br>
+<div class="column">
+	<div id="提示1" style="text-align:right; ">
+	<button id="show_btn1" >提示!</button>
+	<button type="button" onclick="eval_1()">Check!</button>
+	<br>
+	<img id="show1" align="center" src="提示1.jpg" style="display:none" width="80 px"  >
+
+	</div></div>
+
+	<div id="提示2" >	
+	<button id="show_btn2" >提示!</button>
+	<button type="button" onclick="eval_2()">Check!</button>
+	<div id="提示2_圖">
+	<img id="show2" align="center" src="提示2.jpg" style="display:none" width="80 px"  >
+
+	</div>
+</div>
+
+
+<!--------------------------------col2--------------------------------->
+
+
+<div class="column2">
+	<div > 
+		
+
+		<!--第一個表 -->
+		<div style="text-align:center;">
+		<p style="font-family:DFKai-sb ;font-size:150%"> 表一  </p>
+		</div>
+		<table  align="center"  style="font-family:DFKai-sb ;font-size:150%;border:3px #cccccc solid;"  cellpadding="10" border='1'   >
+
+			<!--1row -->
+			<tr><th>  
+				<pre id="cell00" >   1  </pre></th>			 		
+				<th>
+				<pre id="cell01">  2  </pre></th>
+				<th>
+				<div id="cell02">  3  </pre></th> 
+				</tr>
+				<!--2row -->
+			<tr><th><pre id="cell10">  2  </pre></th> , 
+				<th> 
+					<div > 
+			 		<input type="text" id="cell11" maxlength="1" > </div></th>,
+				<th>
+					<div > 
+			 		<input type="text" id="cell12" maxlength="1"> </div></th> , 
+				</tr>
+				<!--3row -->
+			<tr><th> 
+					<pre id="cell10">  3  </pre></th>  
+				<th> 
+					<div > 
+			 		<input type="text" id="cell21" maxlength="1"> </div></th>,
+				<th> 
+					<div > 
+			 		<input type="text" id="cell22" maxlength="1"> </div></th> , 
+				</tr>
+		</table>
+
+		<br>
+	</div>
+
+		<!--第二個表 -->
+		<div > 
+		<div style="text-align:center;">
+		<p style="font-family:DFKai-sb ;font-size:150%"> 表二  </p>
+		</div>
+		<table  align="center"  style="font-family:DFKai-sb ;font-size:150%;border:3px #cccccc solid;"  cellpadding="10" border='1'   >
+			<!--1row -->
+			<tr><th>  
+				<pre id="cell00_2" >   1  </pre></th>			 		
+				<th>
+				<pre id="cell01_2">  2  </pre></th>
+				<th>
+				<div id="cell02_2">  3  </pre></th> 
+				</tr>
+				<!--2row -->
+			<tr><th><pre id="cell10_2">  3  </pre></th> , 
+				<th> 
+					<div > 
+			 		<input type="text" id="cell11_2" maxlength="1" > </div></th>,
+				<th>
+					<div > 
+			 		<input type="text" id="cell12_2" maxlength="1"> </div></th> , 
+				</tr>
+				<!--3row -->
+			<tr><th> 
+					<pre id="cell10_2">  2  </pre></th>  
+				<th> 
+					<div > 
+			 		<input type="text" id="cell21_2" maxlength="1"> </div></th>,
+				<th> 
+					<div > 
+			 		<input type="text" id="cell22_2" maxlength="1"> </div></th> , 
+				</tr>
+		</table>
+</div>
+<!--------------------------------script--------------------------------->
+<script>
+			function eval_1(){
+			var answer_11=document.getElementById("cell11").value;
+			var answer_12=document.getElementById("cell12").value;
+			var answer_21=document.getElementById("cell21").value;
+			var answer_22=document.getElementById("cell22").value;
+
+			if (answer_11==3 && answer_12==1 && answer_21==1 && answer_22==2)
+
+				{alert("表一是對的!");
+			}
+			else{
+				alert("表一有誤!")
+			}
+			}
+
+			function eval_2(){
+			var answer_11_2=document.getElementById("cell11_2").value;
+			var answer_12_2=document.getElementById("cell12_2").value;
+			var answer_21_2=document.getElementById("cell21_2").value;
+			var answer_22_2=document.getElementById("cell22_2").value;
+
+			if (answer_11_2==1 && answer_12_2==2 && answer_21_2==3 && answer_22_2==1)
+
+				{alert("表二是對的!");
+			}
+			else{
+				alert("表二有誤!")
+			}
+			}
+	</script>
+</body>
